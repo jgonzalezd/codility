@@ -29,6 +29,9 @@
 # expected worst-case time complexity is O(1);
 # expected worst-case space complexity is O(1).
 
+# Solution 100%
+# 100 out of 100 points
+
 def solution(x, y, d)
   # write your code in Ruby 2.2
   distance = y - x
