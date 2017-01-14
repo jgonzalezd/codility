@@ -9,8 +9,7 @@ def solution(n,a)
     if val >= 1 && val <= n
       counters[val] += 1
     elsif val == n+1
-      initial = counters.values.max.nil? ? counters[1] : counters.values.max
-      counters = Hash.new(initial)
+      counters = Hash.new(counters.values.max || counters[0])
     end
   end
   res = []
