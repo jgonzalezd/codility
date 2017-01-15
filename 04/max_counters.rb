@@ -5,17 +5,11 @@ include Test::Unit::Assertions
 def solution(n,a)
   counters = Hash.new(0)
   a.each do |val|
-    # byebug
-    if val >= 1 && val <= n
-      counters[val] += 1
-    elsif val == n+1
-      counters = Hash.new(counters.values.max || counters[0])
-    end
+    counters[val] += 1 if val >= 1 && val <= n
+    counters = Hash.new(counters.values.max || counters[0]) if val == n+1
   end
   res = []
-  1.upto(n) do |index|
-    res << counters[index]
-  end
+  1.upto(n) { |index| res << counters[index] }
   res
 end
 
